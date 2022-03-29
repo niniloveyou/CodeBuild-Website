@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Menu} from 'antd';
+import { Menu } from 'antd';
 import './TMenu.css';
 
 import {
@@ -13,7 +13,8 @@ import {
 } from '@ant-design/icons';
 
 const {SubMenu} = Menu;
-
+const menuUnfold = <MenuUnfoldOutlined style={{ fontSize: '16px', color: '#929CA3' }} />
+const menuFold = <MenuFoldOutlined style={{ fontSize: '16px', color: '#929CA3' }} />
 
 class TMenu extends React.Component {
 
@@ -39,7 +40,7 @@ class TMenu extends React.Component {
                     defaultOpenKeys={['sub1']}
                     mode="inline"
                     theme="dark"
-                    style={{width: this.state.width, height: '100vh'}}
+                    style={{width: this.state.width, height: '88vh'}}
                     inlineCollapsed={this.state.collapsed}>
 
                     <Menu.Item key="1" icon={<PieChartOutlined/>}>
@@ -70,10 +71,8 @@ class TMenu extends React.Component {
                     </SubMenu>
                 </Menu>
 
-                <div style={{width: 60, backgroundColor: '#001528'}}>
-                    <Button type="ghost" onClick={this.toggleCollapsed} style={{marginBottom: 16}}>
-                        {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-                    </Button>
+                <div style={{width: 60, marginBottom: 16, backgroundColor: '#001528'}} onClick={this.toggleCollapsed} >
+                    {this.state.collapsed ? menuUnfold: menuFold}
                 </div>
             </div>
         );
