@@ -4,8 +4,6 @@ import './TMenu.css';
 
 import {
     AppstoreOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
     PieChartOutlined,
     DesktopOutlined,
     ContainerOutlined,
@@ -13,15 +11,13 @@ import {
 } from '@ant-design/icons';
 
 const {SubMenu} = Menu;
-const menuUnfold = <MenuUnfoldOutlined style={{ fontSize: '16px', color: '#929CA3' }} />
-const menuFold = <MenuFoldOutlined style={{ fontSize: '16px', color: '#929CA3' }} />
 
 class TMenu extends React.Component {
 
     // 闭包变量
     state = {
         collapsed: false,
-        width: 256
+        width: 220
     };
 
     // 方法实例变量
@@ -70,10 +66,6 @@ class TMenu extends React.Component {
                         </SubMenu>
                     </SubMenu>
                 </Menu>
-
-                <div style={{width: 60, marginBottom: 16, backgroundColor: '#001528'}} onClick={this.toggleCollapsed} >
-                    {this.state.collapsed ? menuUnfold: menuFold}
-                </div>
             </div>
         );
     }
